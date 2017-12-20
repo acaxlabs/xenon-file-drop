@@ -25,7 +25,7 @@
   "ignore": [],
   "dependencies": {
     "polymer": "Polymer/polymer#^1.0.0",
-    "paper-input": "PolymerElements/iron-flex-layout#^1.0.0"
+    "iron-flex-layout": "PolymerElements/iron-flex-layout#^1.0.0"
   },
   "devDependencies": {
   }
