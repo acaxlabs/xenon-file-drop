@@ -1,0 +1,66 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+    <script src="../../webcomponentsjs/webcomponents.min.js"></script>
+    <title>xenon-file-drop demo</title>
+    <link rel="import" href="../../../app-theme.html"/>
+    <link rel="import" href="../../paper-styles/color.html">
+    <link rel="import" href="../../iron-icons/iron-icons.html">
+    <link rel="import" href="../../iron-icon/iron-icon.html">
+    <link rel="import" href="../xenon-file-drop.html">
+    <link rel="import" href="../../iron-flex-layout/classes/iron-flex-layout.html"/>
+    <custom-style>
+        <style is="custom-style" include="iron-flex iron-flex-alignment">
+        </style>
+    </custom-style>
+</head>
+<body>
+    <div class="vertical-section-container centered">
+        <h3>Basic xenon-file-drop demo</h3>
+
+        <dom-module id="demo-index">
+            <template>
+                <style include="app-theme">
+                   xenon-file-drop { border: 1px dashed transparent; color: #aaa; background-color: white; width: 560px; height: 300px; transition: all .3s; margin:auto; }
+                       xenon-file-drop.dragover { border: 1px dashed var(--primary-color); transition: all .3s; }
+                           xenon-file-drop:hover > [slot='drop-zone'],
+                           xenon-file-drop.dragover > [slot='drop-zone'] { color: var(--primary-color); opacity:0.3; transition: all .3s; }
+                       xenon-file-drop[has-files] { color: var(--primary-color); transition: all .3s; }
+                    [slot='drop-zone'] > iron-icon { text-align: center; font-size: 1.1em; --iron-icon-height: 64px; --iron-icon-width: 64px; }
+                        [slot='drop-zone'] > .title { font-size: 1.2em; }
+                        [slot='drop-zone'] > .small { font-size: 0.6em; }
+                </style>
+
+                <xenon-file-drop id="xfile"
+                                accept=".docx, .doc, .txt"
+                                files="{{files}}"
+                                last-error="{{error}}"
+                                on-error="onError">
+                    <!-- Custom slot element to style the interior of the drop zone -->
+                    <drop-zone slot="drop-zone" class="layout vertical center center-justified">
+                        <iron-icon icon="description"></iron-icon>
+                        <div class="title">Drop file here</div>
+                        <div class="small">or click to upload</div>
+                        <!-- error message -->
+                        <div class="small error">[[error.message]]</div>
+                        <!-- list of file selected -->
+                        <template is="dom-repeat" items="[[files]]">
+                            <div class="small">[[item.name]]</div>
+                        </template>
+                    </drop-zone>
+
+                </xenon-file-drop>
+            </template>
+            <script>
+                Polymer({
+                    is: "demo-index"
+                });
+            </script>
+        </dom-module>
+        <demo-index></demo-index>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+{
+  "name": "xenon-file-drop",
+  "version": "1.0",
+  "description": "element for dragging and dropping files into a customizable dropzone.",
+  "authors": [
+    "ACA[X]Labs",
+    "joshua hickerson"
+  ],
+  "keywords": [
+    "web-components",
+    "polymer",
+    "drag",
+    "input",
+    "file",
+    "drop"
+  ],
+  "main": "xenon-file-drop.html",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/acaxlabs/xenon-file-drop.git"
+  },
+  "license": "https://github.com/acaxlabs/xenon-file-drop/blob/master/LICENSE.txt",
+  "homepage": "https://github.com/acaxlabs/xenon-file-drop",
+  "ignore": [],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.0.0",
+    "paper-input": "PolymerElements/iron-flex-layout#^1.0.0"
+  },
+  "devDependencies": {
+  }
+}
